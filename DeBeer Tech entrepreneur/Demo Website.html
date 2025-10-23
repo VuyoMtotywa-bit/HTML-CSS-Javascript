@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YDC Recruitment Demo - Job Seeker Page</title>
+    <style>
+        /* Student Name: [Your Name and Surname] */
+
+        /* 1.1.1 Remove underline from all links */
+        a {
+            text-decoration: none;
+        }
+
+        /* 1.1.2 Banner division image styling */
+        .banner img {
+            margin-top: .5em;
+            margin-right: 12px;
+            float: left;
+        }
+
+        /* 1.1.3 Sidebar division styling */
+        .sidebar {
+            width: 150px;
+            height: 370px;
+            background-color: #9999CC;
+            padding-left: .8em;
+            padding-right: .8em;
+            margin-bottom: .7em;
+            float: left;
+        }
+
+        /* 1.1.4 Copyright class styling */
+        .copyright {
+            margin: 0;
+            text-align: right;
+            font-size: 90%;
+        }
+
+        /* === ADDITIONAL ENHANCED STYLING === */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px 30px;
+            overflow: auto;
+            border-bottom: 4px solid #ffd700;
+        }
+
+        .banner h1 {
+            margin: 0;
+            padding-top: 15px;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 30px;
+            clear: both;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #9999CC 0%, #7b7bb8 100%);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .main {
+            margin-left: 170px;
+            padding: 30px 40px;
+            min-height: 370px;
+            background: #ffffff;
+            line-height: 1.8;
+        }
+
+        .main p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .main a {
+            color: #667eea;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main a:hover {
+            color: #764ba2;
+            border-bottom: 2px solid #764ba2;
+        }
+
+        .footer {
+            clear: both;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 20px 30px;
+            border-top: 3px solid #ffd700;
+        }
+
+        .footer .copyright {
+            color: #ecf0f1;
+            font-size: 90%;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            margin: 5px 0;
+            font-size: 15px;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-left: 4px solid #ffd700;
+            padding-left: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 15px;
+            margin: 8px 0 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+            display: block;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 15px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: #667eea;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        h4 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        select option {
+            padding: 10px;
+        }
+
+        label.inline-label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        /* Logo placeholder styling */
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: #1e3c72;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                margin-left: 0;
+                padding: 20px;
+            }
+            
+            .sidebar {
+                float: none;
+                width: 100%;
+                height: auto;
+            }
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            select {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function Register() {
+            var surname = document.forms["info"]["surname"].value;
+            var password = document.forms["info"]["pwd"].value;
+            var confirmPassword = document.forms["info"]["confirm-pwd"].value;
+            
+            surname = surname.trim();
+            password = password.trim();
+            confirmPassword = confirmPassword.trim();
+            
+            if (surname === "") {
+                alert("Surname is a required field");
+                document.forms["info"]["surname"].focus();
+                return false;
+            }
+            
+            if (password === "") {
+                alert("Password is a required field");
+                document.forms["info"]["pwd"].focus();
+                return false;
+            }
+            
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                document.forms["info"]["confirm-pwd"].focus();
+                return false;
+            }
+            
+            alert("Thank you for registering with YDC Recruitment.\nWe will contact you soon.");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="banner">
+            <div class="logo-placeholder">YDC</div>
+            <h1>YDC RECRUITMENT</h1>
+        </div>
+        
+        <div class="header">
+            <h1>Welcome to YDC Recruitment</h1>
+        </div>
+        
+        <div class="sidebar">
+            <a href="#" onclick="alert('Home page'); return false;">Home</a>
+            <a href="#" onclick="alert('You are on Job Seekers page'); return false;">Job Seekers</a>
+        </div>
+        
+        <div class="main">
+            <form name="info" method="post" action="#">
+                <h4>Personal details</h4>
+                
+                <label for="firstname">First name:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name">
+                
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+                
+                <label for="email">E-mail address:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com">
+                
+                <label>Are you currently employed?</label>
+                <div class="form-group">
+                    <input type="radio" id="yes" name="employed" value="yes" checked>
+                    <label for="yes" class="inline-label">Yes</label>
+                    
+                    <input type="radio" id="no" name="employed" value="no">
+                    <label for="no" class="inline-label">No</label>
+                </div>
+                
+                <label for="province">Province:</label>
+                <select id="province" name="province">
+                    <option value="">-- Select a province --</option>
+                    <option value="Eastern Cape">Eastern Cape</option>
+                    <option value="Free State">Free State</option>
+                    <option value="Gauteng">Gauteng</option>
+                    <option value="Kwazulu Natal">Kwazulu Natal</option>
+                    <option value="Limpopo">Limpopo</option>
+                    <option value="Mpumalanga">Mpumalanga</option>
+                    <option value="North West">North West</option>
+                    <option value="Northern Cape">Northern Cape</option>
+                    <option value="Western Cape">Western Cape</option>
+                </select>
+                
+                <label for="pwd">Password:</label>
+                <input type="password" id="pwd" name="pwd" maxlength="6" placeholder="Max 6 characters">
+                
+                <label for="confirm-pwd">Confirm password:</label>
+                <input type="password" id="confirm-pwd" name="confirm-pwd" maxlength="6" placeholder="Re-enter password">
+                
+                <div class="form-group">
+                    <input type="checkbox" id="terms" name="terms" value="agreed">
+                    <label for="terms" class="inline-label">
+                        I agree to the 
+                        <a href="#" onclick="alert('Terms and Conditions page would open here'); return false;">terms and conditions</a>
+                    </label>
+                </div>
+                
+                <button type="button" onclick="Register()">Register</button>
+            </form>
+        </div>
+        
+        <div class="footer">
+            <p class="copyright">
+                &copy; 2025 YDC Recruitment. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
